@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Timer</title>
+        <link href="https://fonts.googleapis.com/css2?family=Dokdo&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                background-color: #991010;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: 'Dokdo', cursive;
+            }
+            
+            .container {
+                background-color: #FFD7D1;
+                border-radius: 15px;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 250px;
+                height: 250px;
+            }
+            
+            .title {
+                color: #882121;
+                font-size: 50px;
+                font-weight: 400;
+                text-transform: lowercase;
+                letter-spacing: 1px;
+                margin-top: -30px;
+            }
+            
+            #time {
+                color: #CA0F0F;
+                font-family: 'Dokdo', cursive;
+                font-size: 50px;
+                font-weight: 900;
+                text-align: center;
+                margin-top: -10px;
+            }
+            
+            .button-group {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                width: 100%;
+                align-items: center;
+            }
+            
+            button {
+                background-color: #FFF1EF;
+                border: none;
+                border-radius: 8px;
+                font-family: 'Dokdo', cursive;
+                font-size: 30px;
+                font-weight: 400;
+                color: #882121;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                width: 120px;
+                height: 30px;
+                text-transform: lowercase;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            
+            button:hover {
+                background-color: #FB9383;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            }
+            
+            button:active {
+                transform: translateY(0);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            
+            #start {
+                order: 1;
+            }
+            
+            #pause {
+                order: 2;
+            }
+            
+            #reset {
+                order: 3;
+            }
+
+            #swap {
+                position: absolute;
+                bottom: 10px;
+                right: 25px;
+                background: none;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+                transition: transform 0.3s ease;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                box-shadow: none;
+            }
+
+            #swap img {
+                display: block;
+            }
+
+        </style>
+    </head>
+    <body>
+        
+        <div class="container">
+            <h1 class="title">timer</h1>
+            <div id="time">00:00:00:00</div>
+            <div class="button-group">
+                <button id="start">start</button>
+                <button id="pause">pause</button>
+                <button id="reset">reset</button>
+            </div>
+            <button id="swap">>></button>
+        </div>
+
+        <audio id="song1" src="sounds/strawberryswing.m4a" preload="auto"></audio>
+        <audio id="song2" src="sounds/swimgood.m4a" preload="auto"></audio>
+        <audio id="song3" src="sounds/therewillbetears.m4a" preload="auto"></audio>
+
+
+        <audio id="clickSound" src="sounds/click.mp3" preload="auto"></audio>
+        <audio id="typeSound" src="sounds/type.mp3" preload="auto"></audio>
+
+
+        <script src="renderer.js"></script>
+    </body>
+</html>
